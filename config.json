@@ -1,0 +1,84 @@
+{
+    "AGENT_BASE_DIR": "agent",
+    "THOUGHTS_IN_TERMINAL": false,
+    "TOOL_OUTPUTS": true,
+    "DATABASE_PATH": "./data.json",
+    "ACTIVATED_TOOLS": {
+        "file_editor": true,
+        "shell_executor": true,
+        "ask_user": true,
+        "image_analyzer": true,
+        "wiki": true,
+        "database": true
+    },
+    "MODELS": {
+        "gemini-2.0": {
+            "name": "gemini-2.0-flash",
+            "type": "Gemini",
+            "Idx": "gemini-2.0",
+            "api_key": "api_key",
+            "text": [true, true],
+            "audio": [false, false],
+            "image": [true, false],
+            "rate_limit": [60, 14],
+            "tool_support": true
+        },
+        "gemini-2.5": {
+            "name": "gemini-2.5-flash",
+            "type": "Gemini",
+            "Idx": "gemini-2.5",
+            "api_key": "api_key",
+            "text": [true, true],
+            "audio": [false, false],
+            "image": [true, false],
+            "rate_limit": [60, 14],
+            "tool_support": true
+        },
+        "qwen3": {
+            "name": "qwen3:0.6b",
+            "type": "Ollama",
+            "Idx": "qwen3",
+            "host": "http://localhost:11434",
+            "text": [true, true],
+            "audio": [false, false],
+            "image": [false, false],
+            "rate_limit": false,
+            "tool_support": true
+        },
+        "gemma3": {
+            "name": "gemma3:4b",
+            "type": "Ollama",
+            "Idx": "gemma3",
+            "host": "http://localhost:11434",
+            "text": [true, true],
+            "audio": [false, false],
+            "image": [true, false],
+            "rate_limit": false,
+            "tool_support": true
+        }
+    },
+    "MODEL_CONFIG": {
+        "LLM_MODEL": "gemini-2.5",
+        "WIKI_MODEL": "gemini-2.0",
+        "IMAGE_MODEL": "gemini-2.0"
+    },
+    "FORBIDDEN_COMMANDS": [
+        "rm -rf /",
+        "shutdown",
+        "reboot",
+        "poweroff",
+        "halt",
+        "wipefs",
+        "chown",
+        "chroot",
+        ":(){:|:&};:",
+        "cat /etc",
+        "iptables",
+        "firewall-cmd",
+        "dmesg",
+        "modprobe",
+        "insmod",
+        "rmmod",
+        "unset"
+    ]
+}
